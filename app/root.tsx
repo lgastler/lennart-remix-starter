@@ -1,7 +1,14 @@
 import * as React from 'react'
-import type {LinksFunction} from 'remix'
-import {Meta, Links, Scripts, LiveReload, useCatch} from 'remix'
-import {Outlet} from 'react-router-dom'
+import {
+  LinksFunction,
+  ScrollRestoration,
+  Meta,
+  Links,
+  Scripts,
+  LiveReload,
+  useCatch,
+  Outlet,
+} from 'remix'
 
 import tailwindStyles from './styles/tailwind.css'
 
@@ -27,6 +34,7 @@ function Document({
       </head>
       <body>
         {children}
+        <ScrollRestoration />
         <Scripts />
         {process.env.NODE_ENV === 'development' && <LiveReload />}
       </body>
